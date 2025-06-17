@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head xmlns:th="http://www.thymeleaf.org">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+  <h1>registration page </h1>
+  <form th:action="@{/register}" method="POST" th:object="${userEntity}">
+        <input type="text" th:field="*{username}" placeholder="Username" required/><br>
+        <input type="password" th:field="*{password}" placeholder="Password" required/>   <br> 
+            <label>Select Roles :</label><br>
+            <input type="checkbox" th:value="'ROLE_USER'" th:field="*{roleList}" /> USER<br>
+            <input type="checkbox" th:value="'ROLE_MANAGER'" th:field="*{roleList}" />MANAGER<br>
+            <input type="checkbox" th:value="'ROLE_ADMIN'" th:field="*{roleList}" />ADMIN<br>
+        <input type="submit" value="Create New Account"/><br>
+    </form>
+    </body>
+</html>

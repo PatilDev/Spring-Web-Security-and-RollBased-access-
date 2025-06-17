@@ -1,0 +1,29 @@
+body{
+    background-image: url("/Images/home.jpg");
+}
+input{
+            size:50%;
+        }
+        input[type=submit]:hover
+        {
+
+            background-color:green;
+        }
+.homediv{
+
+display:flex;
+margin:10% 20% 25% 20%;
+justify-content: center;
+align-items: center;
+font-size:larger;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: white;
+background-color: rgba(0,0,0,0.4);
+border: 3px solid rgb(255, 255, 255);
+}
+a[href]
+{color:rgb(0, 255, 255);
+text-decoration-line:none;
+
+
+}    

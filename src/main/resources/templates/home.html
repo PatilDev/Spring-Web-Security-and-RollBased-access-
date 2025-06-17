@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="/style.css">
+
+       
+    </head>
+    <body>
+        <p>
+        <div class="homediv">
+       <center><strong><h1>HELLO USER</h1></strong>
+        </p>
+        <br><br>
+        <!--displayuser username and role-->
+        <h2>USER :<span sec:authentication="principal.username"></span></h2>
+        <h2>Roles <span sec:authentication="principal.authorities"></span></h2>
+        <br><br>
+<hr>
+        <!--ADDING  a link to point to leader ...this is for the manager-->
+        <p sec:authorize="hasRole('MANAGER')">
+            <a th:href="@{/leaders}">Leadership meeting</a>
+           only for Manager people
+        </p>
+<!--adding admin page link of page-->
+
+<div sec:authorize="hasRole('ADMIN')">
+        <p>
+        <a th:href="@{/admin}">ADMIN PAGE</a>
+        only admin can access it
+        </p><br><hr>
+<br>
+</div>
+
+       <!--//step:4 adding logout button -->  
+       <form action="#" th:action="@{/logout}" method="POST">
+
+       <input type="submit" value="Logout"/>
+       </form>
+       </center>
+       </dev>
+    </body>
+</html>
